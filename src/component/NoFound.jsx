@@ -3,8 +3,8 @@ import noFound from '../img/noFound.png'
 
 const NoFound = () => {
   return (
-    <section className="d-flex justify-content-around">
-        <img src={ noFound } alt='NoFound' width='60%' />
+    <section className="d-flex justify-content-center">
+        <img src={ noFound } alt='NoFound' width='55%' />
     </section>
   )
 }
