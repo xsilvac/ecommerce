@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css'
 import firstImg from '../img/carousel/1.png'
 import secondImg from '../img/carousel/2.png'
 import thirdImg from '../img/carousel/3.png'
@@ -17,19 +18,19 @@ const Home = () => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={firstImg} className="d-block w-100" alt="..." height="569px"/>
+          <img src={firstImg} className="imgCarousel" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src={secondImg} className="d-block w-100" alt="..." height="569px"/>
+          <img src={secondImg} className="imgCarousel" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src={thirdImg} className="d-block w-100" alt="..." height="569px"/>
+          <img src={thirdImg} className="imgCarousel" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src={fourthImg} className="d-block w-100" alt="..." height="569px"/>
+          <img src={fourthImg} className="imgCarousel" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src={fifthImg} className="d-block w-100" alt="..." height="569px"/>
+          <img src={fifthImg} className="imgCarousel" alt="..."/>
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
