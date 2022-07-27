@@ -33,15 +33,18 @@ const Products = () => {
 </div></div></>
   )}
 
+  const filterProducts = (category) => {
+    setFilter(data.filter(x => x.category === category))
+  }
   const ShowLoading = () => {
     return (
       <>
       <div id="btnsProducts" >
-        <button className="btn btn-outline-dark me-2">Todo</button>
-        <button className="btn btn-outline-dark me-2">Moda Hombre</button>
-        <button className="btn btn-outline-dark me-2">Moda Mujer</button>
-        <button className="btn btn-outline-dark me-2">Accesorios</button>
-        <button className="btn btn-outline-dark me-2">Electronicos</button>
+        <button className="btn btn-outline-dark me-2" onClick={() => setFilter(data)}>Todo</button>
+        <button className="btn btn-outline-dark me-2" onClick={() => filterProducts("men's clothing")}>Moda Hombre</button>
+        <button className="btn btn-outline-dark me-2" onClick={() => filterProducts("women's clothing")}>Moda Mujer</button>
+        <button className="btn btn-outline-dark me-2" onClick={() => filterProducts("jewelery")}>Accesorios</button>
+        <button className="btn btn-outline-dark me-2" onClick={() => filterProducts("electronics")}>Electronicos</button>
       </div>
       
     {filter.map((product) => {
