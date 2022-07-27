@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css'
+import { Link } from 'react-router-dom'
+import Loading from './Loading'
 
 
 const Products = () => {
@@ -25,14 +27,6 @@ const Products = () => {
     getProducts()
   }, [])
 
-  const Loading = () => {
-  return(
-  <>
-  <div className="loading"><div className="loadingChild">
-<div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
-</div></div></>
-  )}
-
   const filterProducts = (category) => {
     setFilter(data.filter(x => x.category === category))
   }
@@ -55,7 +49,7 @@ const Products = () => {
                 <div className="card-body">
                   <h5 className="card-title">{product.title.slice(0,12)}...</h5>
                   <p className="card-text lead fw-bolder">S/.{product.price}</p>
-                  <a href="#" className="btn btn-outline-dark">Comprar</a>
+                  <Link to={`/Products/${product.id}`} className="btn btn-outline-dark">Comprar</Link>
                 </div>
             </div>
           </section>
