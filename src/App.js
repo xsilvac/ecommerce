@@ -7,12 +7,15 @@ import Products from './component/Products';
 import NavBar from './component/Navbar';
 import About from './component/About';
 import Contact from './component/Contact';
-
+import {Provider} from 'react-redux';
+import store from './redux/store';
+import Cart from './component/Cart';
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <Provider store={store}>
         <NavBar />
           <Routes>
             <Route path='/' element={<Home />} />
@@ -20,8 +23,10 @@ function App() {
             <Route path='Products/:id' element={<Product />} />
             <Route path='About' element={<About />} />
             <Route path='Contact' element={<Contact />} />
+            <Route path='Cart' element={<Cart />} />
             <Route path='*' element={<NoFound />} />
           </Routes>
+          </Provider>
       </BrowserRouter></>
   );
 }
