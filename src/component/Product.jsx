@@ -16,11 +16,11 @@ const Product = () => {
   const ShowProduct = () => {
     return(
       <>
-      <div className="col-md-5 my-5">
-        <img src={product.image} alt={product.title}
-        height="400px" width="400px"/>
+      <div className="d-flex justify-content-center col-md-5 my-5">
+        <img src={product.image} alt={product.title} className="my-3"
+        height="380px" width="350px"/>
       </div>
-      <div className="col-md-7">
+      <div className="col-md-6 p-4">
         <h5 className="text-uppercase text-black-50">{product.category}</h5>
         <h2 className="display-5">{product.title}</h2>
         <p className="lead fw-bolder">
@@ -42,7 +42,7 @@ const Product = () => {
   }, [])
 
   return (
-    <><section className="container py-4">
+    <><section className="container-fluid my-3 px-5">
       <div className="row">
         {loading ? < Loading/> : < ShowProduct/>}
       </div>
