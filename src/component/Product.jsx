@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import {useDispatch} from 'react-redux';
+import { addCart } from '../redux/action';
 import { useParams, NavLink } from 'react-router-dom';
 import Loading from './Loading';
 
 const Product = () => {
   const {id} = useParams();
-  const [product, setProduct] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const addProduct = (product) => {
+    dispatch(addCart(product));
+  }
 
   const getProduct = async () => {
-    setLoading(true)
+    setLoading(true);
     const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-    setLoading(false)
+    setLoading(false);
     setProduct(await response.json());
 }
   const ShowProduct = () => {
@@ -29,16 +36,15 @@ const Product = () => {
         </p>
         <h5 className="display-6 fw-bold my-4">$ {product.price}</h5>
         <p className="lead">{product.description}</p>
-        <button className="btn btn-outline-dark me-2">Añadir al carrito</button>
-        <NavLink to='/'className="btn btn-dark">Ir al carrito</NavLink>
+        <button className="btn btn-outline-dark me-2" onClick={() => addProduct(product)}>Añadir al carrito</button>
+        <NavLink to='/Cart'className="btn btn-dark">Ir al carrito</NavLink>
       </div>
       </>
     )
   }
 
   useEffect(() => {
-    getProduct()
-    console.log(product)
+    getProduct();
   }, [])
 
   return (

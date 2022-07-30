@@ -1,8 +1,10 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import logo from '../img/newStyle.png'
+import {useSelector} from 'react-redux';
 
 const Navbar = () => {
+    const state = useSelector((state) => state.handleCart);
     return (
             <nav className="navbar navbar-expand-lg bg-light shadow-sm">
                 <div className="container-fluid">
@@ -30,8 +32,8 @@ const Navbar = () => {
                             <i className='fa fa-sign-in me-1'></i>Iniciar</NavLink >
                             <NavLink to='/' className="btn btn-outline-secondary ms-2">
                             <i className='fa fa-user-plus me-1'></i>Registrate</NavLink >
-                            <NavLink to='/' className="btn btn-outline-secondary ms-2">
-                            <i className='fa fa-shopping-cart me-1'></i>Cart(0)</NavLink >
+                            <NavLink to='/Cart' className="btn btn-outline-secondary ms-2">
+                            <i className='fa fa-shopping-cart me-1'></i>Cart({state.length})</NavLink >
                         </div>
                     </div>
                 </div>
