@@ -44,8 +44,7 @@ const Product = () => {
   }
 
   useEffect(() => {
-    getProduct()
-    console.log(product)
+    getProduct();
   }, [])
 
   return (
