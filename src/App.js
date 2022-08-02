@@ -10,6 +10,7 @@ import Contact from './component/Contact';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import Cart from './component/Cart';
+import Checkout from './component/Checkout';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='About' element={<About />} />
             <Route path='Contact' element={<Contact />} />
             <Route path='Cart' element={<Cart />} />
+            <Route path='Checkout' element={<Checkout />} />
             <Route path='*' element={<NoFound />} />
           </Routes>
           </Provider>
